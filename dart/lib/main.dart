@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:opentelemetry/api.dart' as otel_api;
 import 'package:opentelemetry/sdk.dart' as otel_sdk;
 
 // Optionally, multiple processors can be registered
@@ -7,7 +8,7 @@ final provider = otel_sdk.TracerProviderBase(processors: [
     otel_sdk.CollectorExporter(
       Uri.parse('http://localhost:4318/v1/traces'),
     ),
-    scheduledDelayMillis: 500,
+    scheduledDelayMillis: 100,
     maxExportBatchSize: 512,
   ),
   otel_sdk.SimpleSpanProcessor(otel_sdk.ConsoleExporter())
@@ -53,7 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    final spanClick = tracer.startSpan('click');
+    final spanClick = tracer.startSpan(
+      'click',
+    );
+    spanClick.addEvent('clickEvent',
+        attributes: [otel_api.Attribute.fromInt('click', _counter)]);
     setState(() {
       _counter++;
     });
