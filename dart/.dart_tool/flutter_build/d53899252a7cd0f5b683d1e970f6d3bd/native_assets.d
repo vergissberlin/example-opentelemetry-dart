@@ -1,0 +1,1 @@
+ /Users/andrelademann/Development/vergissberlin/example-opentelemetry-dart/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/native_assets.yaml: 

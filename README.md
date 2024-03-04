@@ -1,16 +1,21 @@
-# example_opentelemetry_dart
+# Example - Dart with Flutter an OptenTelemetry
 
-A new Flutter project.
+This example shows how to use the OptenTelemetry with Dart and Flutter.
 
-## Getting Started
+## Components
 
-This project is a starting point for a Flutter application.
+- [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)
+- [Jaeger](https://www.jaegertracing.io/)
+- [Flutter Exampe App](https://flutter.dev/)
+- [Dart OpenTelemetry](https://pub.dev/packages/opentelemetry)
 
-A few resources to get you started if this is your first Flutter project:
+It starts a simple Flutter app that sends traces to the OpenTelemetry 
+Collector, which then sends the traces to Jaeger. As a storage backend,
+Jaeger uses Elasticsearch.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Prerequisites
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Flutter](https://flutter.dev/)
+- [Dart](https://dart.dev/)
