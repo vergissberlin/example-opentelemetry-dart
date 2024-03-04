@@ -14,7 +14,9 @@ receivers:
         cors:
           allowed_origins:
             - "*"
-
+  datadog:
+    endpoint: 0.0.0.0:8126
+    read_timeout: 60s
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Processors
