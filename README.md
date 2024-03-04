@@ -1,4 +1,7 @@
-# Example - Dart with Flutter an OptenTelemetry
+# Example - Dart with Flutter an OpenTelemetry
+
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
+
 
 This example shows how to use the OptenTelemetry with Dart and Flutter.
 
