@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d3cc0e4-6d1e-4c2e-8b8a-51ef65261d90" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dart/ios/Runner/RunnerRelease.entitlements" afterDir="false" />
+    <list default="true" id="4d3cc0e4-6d1e-4c2e-8b8a-51ef65261d90" name="Changes" comment="feat: Send traces and spans successfully with macos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/dart/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/dart/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/macos/Runner/DebugProfile.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/dart/macos/Runner/DebugProfile.entitlements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/macos/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/macos/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/macos/Runner/Release.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/dart/macos/Runner/Release.entitlements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/melt/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/melt/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melt/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/melt/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/melt/logs.json" beforeDir="false" afterPath="$PROJECT_DIR$/melt/logs.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,6 +118,41 @@
       <option name="presentableId" value="Default" />
       <updated>1709559272976</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat: Send traces and spans successfully with macos">
+      <option name="closed" value="true" />
+      <created>1709584230114</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709584230114</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Send traces and spans successfully with macos" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Send traces and spans successfully with macos" />
+  </component>
+  <component name="com.gk646.codestats.settings.Save">
+    <option name="commitTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1709584230599" />
+          <option name="linesCode" value="3871" />
+          <option name="totalLines" value="4753654" />
+          <option name="info" value="feat: Send traces and spa" />
+        </TimePoint>
+      </list>
+    </option>
+    <option name="genericTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1709584230599" />
+          <option name="linesCode" value="3871" />
+          <option name="totalLines" value="4753654" />
+          <option name="info" value="4 Mar 2024" />
+        </TimePoint>
+      </list>
+    </option>
   </component>
 </project>
