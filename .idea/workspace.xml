@@ -5,64 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d3cc0e4-6d1e-4c2e-8b8a-51ef65261d90" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dart/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/melt/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/melt/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/melt/otel-collector-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/melt/span.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dart/ios/Runner/RunnerRelease.entitlements" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/debug_macos_bundle_flutter_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/debug_macos_bundle_flutter_assets.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/flutter_assets.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dart/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/cbff2b1535276d602df97b9656722b6e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/cbff2b1535276d602df97b9656722b6e.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Flutter Assemble.build/InputFileList-33CC111E2044C6BF0003C045-FlutterInputs-63d6c9634c8277bf35d637bab3b45cdc-resolved.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Flutter Assemble.build/InputFileList-33CC111E2044C6BF0003C045-FlutterInputs-63d6c9634c8277bf35d637bab3b45cdc-resolved.xcfilelist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Flutter Assemble.build/OutputFileList-33CC111E2044C6BF0003C045-FlutterOutputs-b01599e6350815553e58857c547342ce-resolved.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Flutter Assemble.build/OutputFileList-33CC111E2044C6BF0003C045-FlutterOutputs-b01599e6350815553e58857c547342ce-resolved.xcfilelist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/GeneratedPluginRegistrant.d" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/GeneratedPluginRegistrant.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/GeneratedPluginRegistrant.swiftdeps" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/GeneratedPluginRegistrant.swiftdeps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/Runner-master-emit-module.d" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/Runner-master-emit-module.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/Runner-master.priors" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/Runner-master.priors" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/example_opentelemetry_dart.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/Objects-normal/arm64/example_opentelemetry_dart.swiftsourceinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/SwiftStdLibToolInputDependencies.dep" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/Runner.build/Debug/Runner.build/SwiftStdLibToolInputDependencies.dep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/build.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/1b7ac61b8ecc62c8e69b213f182eca6b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/25a0d2f2c368ffb9ce255a453609ea13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/2a1e0a7a10f952896ca113ca52161921" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/31c9c2953a518b629b84639407cb76ae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/4a4d8b323fb25206fc5fb1b1de712166" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/53726d5ef63a0f386d03df5c14aa19e2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/67e76468a8cd78f03ef5535f8fd0ab00" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/76cf597dda4238244f73c34cf766bf88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/8bba4233626f64a7ea772bb94a08a1a9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/d41d8cd98f00b204e9800998ecf8427e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/dd1658b7275676660fb466feae65cfe1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/attachments/fd8314defc70a8778956f026c0ddfd19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/build-request.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/description.msgpack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/target-graph.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Intermediates.noindex/XCBuildData/e4dc432aa397a2b19812adc80ce61b30.xcbuilddata/task-store.msgpack" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/App.framework/Versions/A/Resources/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/App.framework/Versions/A/Resources/flutter_assets/NOTICES.Z" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/App.framework/Versions/A/Resources/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/App.framework/Versions/A/Resources/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/App" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/App" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/Resources/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/Resources/flutter_assets/NOTICES.Z" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/Resources/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/Resources/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/Frameworks/App.framework/Versions/A/_CodeSignature/CodeResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/MacOS/example_opentelemetry_dart" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/MacOS/example_opentelemetry_dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.app/Contents/_CodeSignature/CodeResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/Build/Products/Debug/example_opentelemetry_dart.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/ModuleCache.noindex/Session.modulevalidation" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/ModuleCache.noindex/Session.modulevalidation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/SDKStatCaches.noindex/macosx14.2-23C53-df0db8920d7ae99241a1bc0f08d2dced.sdkstatcache" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/SDKStatCaches.noindex/macosx14.2-23C53-df0db8920d7ae99241a1bc0f08d2dced.sdkstatcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/build/macos/info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/build/macos/info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dart/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/dart/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dart/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/ios/Runner/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dart/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/dart/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/pubspec.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dart/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opentelemetry/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/opentelemetry/open-temetry-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/opentelemetry/otel-collector-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dart/macos/Runner/DebugProfile.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/dart/macos/Runner/DebugProfile.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dart/macos/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/dart/macos/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dart/macos/Runner/Release.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/dart/macos/Runner/Release.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melt/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/melt/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melt/logs.json" beforeDir="false" afterPath="$PROJECT_DIR$/melt/logs.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +75,7 @@
       <recent name="$PROJECT_DIR$/opentelemetry" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dart" />
       <recent name="$PROJECT_DIR$/melt" />
       <recent name="$PROJECT_DIR$/opentelemetry" />
     </key>

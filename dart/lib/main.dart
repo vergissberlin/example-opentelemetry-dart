@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:opentelemetry/sdk.dart' as otel_sdk;
 
 // Optionally, multiple processors can be registered
@@ -10,34 +7,20 @@ final provider = otel_sdk.TracerProviderBase(processors: [
     otel_sdk.CollectorExporter(
       Uri.parse('http://localhost:4318/v1/traces'),
     ),
+    scheduledDelayMillis: 500,
+    maxExportBatchSize: 512,
   ),
   otel_sdk.SimpleSpanProcessor(otel_sdk.ConsoleExporter())
 ]);
 
 final tracer = provider.getTracer('instrumentation-name');
-// final tracer = globalTracerProvider.getTracer('instrumentation-name');
-
 registerGlobalTracerProvider(provider) {}
+// final tracer = globalTracerProvider.getTracer('instrumentation-name');
 
 void main() {
   final span = tracer.startSpan('doingWork');
   runApp(const MyApp());
-  // _manuelRequest();
   span.end();
-}
-
-void _manuelRequest() async {
-  var client = http.Client();
-  try {
-    var response = await client.post(
-        Uri.https('https://requestbin.myworkato.com/1ea29g51', 'post'),
-        body: {'name': 'doodle', 'color': 'blue'});
-    var decodedResponse = jsonDecode(utf8.decode(response.bodyBytes)) as Map;
-    var uri = Uri.parse(decodedResponse['uri'] as String);
-    print(await client.get(uri));
-  } finally {
-    client.close();
-  }
 }
 
 class MyApp extends StatelessWidget {
@@ -70,9 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    final spanClick = tracer.startSpan('click');
     setState(() {
       _counter++;
     });
+    spanClick.end();
   }
 
   @override
