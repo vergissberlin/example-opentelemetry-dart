@@ -1,0 +1,27 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: "0.0.0.0:4317"
+        tls:
+          insecure: true
+      http:
+        endpoint: "0.0.0.0:55681"
+        tls:
+          insecure: true
+# Add other receivers as needed, e.g., Zipkin for compatibility with Jaeger
+exporters:
+  # Jaeger all in one exporter
+  jaeger:
+      endpoint: "jaeger:14250"
+      insecure: true
+  #elasticsearch:
+  #  hosts:
+  #    - http://elasticsearch:9200
+  #  tls:
+  #    insecure: true
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [jaeger]
