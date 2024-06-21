@@ -1,0 +1,54 @@
+import 'package:http/http.dart' as http;
+import 'package:opentelemetry/api.dart' as otel;
+import 'package:opentelemetry/sdk.dart' as otel_sdk;
+
+final exporter =
+    otel_sdk.CollectorExporter(Uri.parse('https://localhost:1111/v1/traces'));
+
+Future<void> main() async {
+  // Initialisiere den Jaeger Exporter
+  var jaegerExporter = JaegerExporter(
+    serviceName: 'my-dart-service',
+    // Der Endpunkt sollte mit dem des OpenTelemetry Collectors übereinstimmen.
+    endpoint: Uri.parse('http://localhost:14250'),
+  );
+
+  // Initialisiere den OpenTelemetry SDK und setze den Jaeger Exporter.
+  var tracerProvider = otel.TracerProvider(sampler: otel.AlwaysOnSampler())
+    ..addSpanProcessor(otel.BatchSpanProcessor(jaegerExporter));
+
+  // Registriere den TracerProvider als globalen Provider.
+  otel.GlobalTracerProvider.setTracerProvider(tracerProvider);
+
+  // Erhalte eine Instanz des Tracers.
+  var tracer = otel.GlobalTracerProvider.getTracer('my-dart-tracer');
+
+  // Starte einen neuen Span.
+  var span = tracer.startSpan('my-operation');
+
+  try {
+    // Simuliere eine HTTP-Anfrage oder eine andere Operation.
+    var response = await http.get(Uri.parse('https://example.com'));
+
+    if (response.statusCode != 200) {
+      span.recordException(Exception('Non-200 response'));
+    }
+
+    // Setze Attribute auf dem Span basierend auf der Antwort oder anderen Informationen.
+    span.setAttribute('http.status_code', response.statusCode);
+
+    print('HTTP GET response status code was ${response.statusCode}');
+  } catch (e) {
+    span.recordException(e);
+
+    print('An error occurred $e');
+  } finally {
+    // Beende den Span nach der Operation.
+    span.end();
+
+    // Stelle sicher, dass alle Spans exportiert wurden bevor das Programm beendet wird.
+    await tracerProvider.shutdown();
+
+    print('Trace completed.');
+  }
+}

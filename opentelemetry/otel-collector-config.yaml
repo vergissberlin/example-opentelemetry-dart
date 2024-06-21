@@ -1,27 +1,67 @@
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# Receivers
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: "0.0.0.0:4317"
-        tls:
-          insecure: true
+        endpoint: 0.0.0.0:4317
       http:
-        endpoint: "0.0.0.0:55681"
-        tls:
-          insecure: true
-# Add other receivers as needed, e.g., Zipkin for compatibility with Jaeger
+        endpoint: 0.0.0.0:4318
+        cors:
+          allowed_origins:
+            - "*"
+
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# Processors
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+processors:
+  batch:
+
+
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# Exporters
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 exporters:
-  # Jaeger all in one exporter
-  jaeger:
-      endpoint: "jaeger:14250"
-      insecure: true
-  #elasticsearch:
-  #  hosts:
-  #    - http://elasticsearch:9200
+  file:
+    path: /logs/collector.json
+
+  # Logging
+  logging:
+    loglevel: debug
+
+  # Data sources: traces
+  #otlp/jaeger:
+  #  endpoint: jaeger:4317
   #  tls:
-  #    insecure: true
+  #    insecure: false
+  #    insecure_skip_verify: true
+
+
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# Extensions
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# extensions:
+#   health_check:
+#   pprof:
+#   zpages:
+
+
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# Service
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 service:
+  # extensions: [health_check, pprof, zpages]
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [jaeger]
+      processors: [batch]
+      exporters: [file,logging]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [file,logging]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [file,logging]

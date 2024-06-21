@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d3cc0e4-6d1e-4c2e-8b8a-51ef65261d90" name="Changes" comment="feat: Send traces and spans successfully with macos">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/flutter_build/d53899252a7cd0f5b683d1e970f6d3bd/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dart/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/dart/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dart/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/dart/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +27,14 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dev/opentelemetry-0.18.0/lib/src/sdk/metrics/meter_provider.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dev/opentelemetry-0.18.0/lib/src/sdk/platforms/web/trace/web_tracer_provider.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dev/opentelemetry-0.18.0/lib/src/sdk/proto/opentelemetry-proto/opentelemetry/proto/trace/v1/trace.proto" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dev/opentelemetry-0.18.0/lib/src/sdk/trace/exporters/span_exporter.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dev/opentelemetry-0.18.0/lib/src/sdk/trace/span_processors/simple_processor.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dev/opentelemetry-0.18.0/lib/src/sdk/trace/span_processors/span_processor.dart" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,21 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Dart Command Line App.dirk.dart.executor": "Run",
-    "Flutter.main.dart.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/andrelademann/Development/vergissberlin/example-opentelemetry-dart/melt",
-    "settings.editor.selected.configurable": "flutter.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Dart Command Line App.dirk.dart.executor&quot;: &quot;Run&quot;,
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/andrelademann/Development/vergissberlin/example-opentelemetry-dart/melt&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/melt" />
