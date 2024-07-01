@@ -12,7 +12,12 @@ logs:
 status:
 	cd opentelemetry && docker compose ps
 
+ps: status
+
 run:
 	cd app && flutter run -d macos
 
-default: up
+restart: down
+	make up
+
+default: restart

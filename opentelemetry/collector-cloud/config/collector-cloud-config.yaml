@@ -5,13 +5,24 @@ receivers:
   otlp:
     protocols:
       grpc:
+        endpoint: localhost:4317
       http:
+        endpoint: localhost:4318
+        cors:
+          allowed_origins:
+            - "*"
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Processors
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 processors:
   batch:
+  filter:
+    metrics:
+      exclude:
+        match_type: strict
+        metric_names:
+          - queueSize
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Exporters
@@ -19,21 +30,12 @@ processors:
 exporters:
   file:
     path: /logs/collector.json
-  logging:
-    loglevel: debug
   debug:
     verbosity: detailed
   otlp:
     endpoint: "jaeger:4317"
     tls:
       insecure: true
-  #prometheus:
-  #  endpoint: "jaeger:4318"
-  #  resource_to_telemetry_conversion:
-  #    enabled: true
-  #  enable_open_metrics: true
-# Export traces to jaeger all in one image
-
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Extensions
@@ -47,15 +49,21 @@ exporters:
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Service
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 service:
   pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [filter, batch]
+      exporters: 
+        - file
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: 
+        - file
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [logging]
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [logging]
-
+      exporters: 
+        - file
+        - otlp
