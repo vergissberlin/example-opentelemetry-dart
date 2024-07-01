@@ -1,32 +1,22 @@
-
-# Template for running the collector in a docker container
-version: '3.7'
-
 networks:
   otel:
     driver: bridge
 
-
-
-services:
-  collector-base: &collector-base
+services:  
+  collector-edge:
     image: otel/opentelemetry-collector
-    environment:
-      - FOO=foo
-      - BAR=bar
+    command: ["--config", "/etc/otel/config.yaml"]
+    volumes:
+      - ./collector-edge/config/collector-edge-config.yaml:/etc/otel/config.yaml
+      - ./collector-edge/logs/collector.json:/logs/collector.json
     networks:
       - otel
 
-  collector-edge:
-    <<: *collector-base
-    volumes:
-      - ./collector-edge/config/collector-edge-config.yaml:/etc/otelcol/config.yaml
-      - ./collector-edge/logs/collector.json:/logs/collector.json
-
   collector-cloud:
-    <<: *collector-base
+    image: otel/opentelemetry-collector
+    command: ["--config", "/etc/otel/config.yaml"]
     volumes:
-      - ./collector-cloud/config/collector-cloud-config.yaml:/etc/otelcol/config.yaml
+      - ./collector-cloud/config/collector-cloud-config.yaml:/etc/otel/config.yaml
       - ./collector-cloud/logs/collector.json:/logs/collector.json
     ports:
       - 4317:4317 # OTLP gRPC receiver
@@ -36,7 +26,8 @@ services:
 #      - 8889:8889 # Prometheus exporter metrics
 #      - 13133:13133 # health_check extension
      # - 55679:55679 # zpages extension
-
+    networks:
+      - otel
 
   jaeger:
     image: jaegertracing/all-in-one
@@ -53,6 +44,3 @@ services:
     networks:
       - otel
 
-networks:
-  otel:
-    driver: bridge

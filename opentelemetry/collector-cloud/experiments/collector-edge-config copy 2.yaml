@@ -6,12 +6,30 @@ receivers:
     protocols:
       grpc:
       http:
+        cors:
+          allowed_origins:
+            - "http://*"
+            - "https://*"
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Processors
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 processors:
   batch:
+#  spanmetrics:
+#    metrics_exporter: prometheus
+  # temporary measure until description is fixed in .NET
+  # transform:
+  #   metric_statements:
+  #     - context: metric
+  #       statements:
+  #         - set(description, "Measures the duration of inbound HTTP requests") where name == "http.server.duration"
+  filter:
+    metrics:
+      exclude:
+        match_type: strict
+        metric_names:
+          - queueSize
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Exporters
@@ -47,15 +65,24 @@ exporters:
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Service
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 service:
+  # extensions: [health_check, pprof, zpages]
   pipelines:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [logging]
+      exporters: 
+        - file
+        - logging
+        - otlp
     metrics:
       receivers: [otlp]
+      processors: [filter, batch]
+      exporters: 
+        - file
+        - logging
+        # - prometheus
+    logs:
+      receivers: [otlp]
       processors: [batch]
-      exporters: [logging]
-
+      exporters: [file, logging]
