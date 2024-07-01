@@ -4,10 +4,14 @@ import 'package:opentelemetry/api.dart';
 import 'package:opentelemetry/sdk.dart' as otel_sdk;
 
 // Optionally, multiple processors can be registered
-final provider = otel_sdk.TracerProviderBase(processors: [
+final provider = otel_sdk.TracerProviderBase(
+  processors: [
   otel_sdk.BatchSpanProcessor(
     otel_sdk.CollectorExporter(
-      Uri.parse('http://localhost:4318/v1/traces'),
+      Uri.parse('http://jaeger:4318/v1/traces'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     ),
     scheduledDelayMillis: 100,
     maxExportBatchSize: 512,
@@ -15,6 +19,7 @@ final provider = otel_sdk.TracerProviderBase(processors: [
   otel_sdk.SimpleSpanProcessor(otel_sdk.ConsoleExporter())
 ]);
 
+// final tracer = globalTracerProvider.getTracer('instrumentation-name');
 final tracer = provider.getTracer(
   'instrumentation-name',
   schemaUrl: 'http://localhost:4317',
@@ -31,8 +36,7 @@ final tracer = provider.getTracer(
     ),
   ],
 );
-registerGlobalTracerProvider(provider) {}
-// final tracer = globalTracerProvider.getTracer('instrumentation-name');
+
 
 void main() {
   final span = tracer.startSpan(
@@ -47,7 +51,7 @@ void main() {
         'Vergissberlin',
       ),
     ],
-  );
+  );  
   runApp(const MyApp());
   span.end();
 }
@@ -81,7 +85,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _incrementCounter() async {
+    final wrapSpan = tracer.startSpan('wrapSpan');
     final spanClick = tracer.startSpan(
       context: otel_api.Context.current,
       attributes: [
@@ -100,14 +105,21 @@ class _MyHomePageState extends State<MyHomePage> {
           'Vergissberlin',
         ),
       ],
-      'click',
+      'Oha! Dirk',
     );
+      final receiveSpan = tracer.startSpan('receiveCash');
+      // wait 1 second
+      await Future.delayed(const Duration(seconds: 1), () {
+        receiveSpan.end();
+      });
+
     spanClick.addEvent('clickEvent',
         attributes: [otel_api.Attribute.fromInt('click', _counter)]);
     setState(() {
       _counter++;
     });
     spanClick.end();
+    wrapSpan.end();
   }
 
   @override
