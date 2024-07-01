@@ -1,0 +1,7 @@
+# docker compose with two oteöl collectors in a row
+version: '3.7'
+
+networks:
+  otel:
+    driver: bridge
+  

@@ -1,30 +1,57 @@
+
+# Template for running the collector in a docker container
+version: '3.7'
+
+networks:
+  otel:
+    driver: bridge
+
+
+
 services:
-  collector:
+  collector-base: &collector-base
     image: otel/opentelemetry-collector
+    environment:
+      - FOO=foo
+      - BAR=bar
+    networks:
+      - otel
+
+  collector-edge:
+    <<: *collector-base
     volumes:
-      - ./otel-collector-config.yaml:/etc/otelcol/config.yaml
-      - ./logs/collector.json:/logs/collector.json
+      - ./collector-edge/config/collector-edge-config.yaml:/etc/otelcol/config.yaml
+      - ./collector-edge/logs/collector.json:/logs/collector.json
+
+  collector-cloud:
+    <<: *collector-base
+    volumes:
+      - ./collector-cloud/config/collector-cloud-config.yaml:/etc/otelcol/config.yaml
+      - ./collector-cloud/logs/collector.json:/logs/collector.json
     ports:
+      - 4317:4317 # OTLP gRPC receiver
+      - 4318:4318 # OTLP http receiver
 #      - 1888:1888 # pprof extension
 #      - 8888:8888 # Prometheus metrics exposed by the Collector
 #      - 8889:8889 # Prometheus exporter metrics
 #      - 13133:13133 # health_check extension
-      - 4317:4317 # OTLP gRPC receiver
-      - 4318:4318 # OTLP http receiver
      # - 55679:55679 # zpages extension
+
+
+  jaeger:
+    image: jaegertracing/all-in-one
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    ports:
+      - "5778:5778"
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "9411:9411"
+      - "14250:14250"
+      - "14268:14268"
+      - "16686:16686"
     networks:
       - otel
-
-  #jaeger:
-  #  image: jaegertracing/all-in-one:latest
-  #  environment:
-  #    - COLLECTOR_OTLP_ENABLED=true
-  #  ports:
-  #    - 16686:16686
-  #    - 4317:4317
-  #    - 4318:4318
-  #  networks:
-  #    - otel
 
 networks:
   otel:

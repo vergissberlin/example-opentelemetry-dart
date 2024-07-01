@@ -29,3 +29,13 @@ Jaeger uses Elasticsearch.
 3. Collect logs from the Flutter app
 4. Collect traces from the Flutter app
 5. Collect metrics with custom attributes from the Flutter app
+
+```mermaid
+flowchart TD
+    A[Application] --> B[OpenTelemetry SDK]
+    B --> C[OTel Collector Edge]
+    C --> D[File Exporter]
+    D --> C
+    C --> E[OTel Collector Cloud]
+    E --> F[Backend]
+```

@@ -5,19 +5,31 @@ receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: 0.0.0.0:4317
       http:
-        endpoint: 0.0.0.0:4318
         cors:
           allowed_origins:
-            - "*"
+            - "http://*"
+            - "https://*"
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Processors
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 processors:
   batch:
-
+#  spanmetrics:
+#    metrics_exporter: prometheus
+  # temporary measure until description is fixed in .NET
+  # transform:
+  #   metric_statements:
+  #     - context: metric
+  #       statements:
+  #         - set(description, "Measures the duration of inbound HTTP requests") where name == "http.server.duration"
+  filter:
+    metrics:
+      exclude:
+        match_type: strict
+        metric_names:
+          - queueSize
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Exporters
@@ -25,17 +37,20 @@ processors:
 exporters:
   file:
     path: /logs/collector.json
-
-  # Logging
   logging:
     loglevel: debug
-
-  # Data sources: traces
-  #otlp/jaeger:
-  #  endpoint: jaeger:4317
-  #  tls:
-  #    insecure: false
-  #    insecure_skip_verify: true
+  debug:
+    verbosity: detailed
+  otlp:
+    endpoint: "jaeger:4317"
+    tls:
+      insecure: true
+  #prometheus:
+  #  endpoint: "jaeger:4318"
+  #  resource_to_telemetry_conversion:
+  #    enabled: true
+  #  enable_open_metrics: true
+# Export traces to jaeger all in one image
 
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -56,12 +71,18 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [file,logging]
+      exporters: 
+        - file
+        - logging
+        - otlp
     metrics:
       receivers: [otlp]
-      processors: [batch]
-      exporters: [file,logging]
+      processors: [filter, batch]
+      exporters: 
+        - file
+        - logging
+        # - prometheus
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [file,logging]
+      exporters: [file, logging]
