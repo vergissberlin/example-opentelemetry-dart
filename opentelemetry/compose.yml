@@ -9,6 +9,9 @@ services:
     volumes:
       - ./collector-edge/config/collector-edge-config.yaml:/etc/otel/config.yaml
       - ./collector-edge/logs/collector.json:/logs/collector.json
+    ports:
+      - 4317:4317 # OTLP gRPC receiver
+      - 4318:4318 # OTLP http receiver
     networks:
       - otel
 
@@ -19,14 +22,14 @@ services:
       - ./collector-cloud/config/collector-cloud-config.yaml:/etc/otel/config.yaml
       - ./collector-cloud/logs/collector.json:/logs/collector.json
     ports:
-      - 4317:4317 # OTLP gRPC receiver
-      - 4318:4318 # OTLP http receiver
       - "55681:55681" # OTLP HTTP port for external access
+#      - 4217:4317 # OTLP gRPC receiver
+#      - 4218:4318 # OTLP http receiver
 #      - 1888:1888 # pprof extension
 #      - 8888:8888 # Prometheus metrics exposed by the Collector
 #      - 8889:8889 # Prometheus exporter metrics
 #      - 13133:13133 # health_check extension
-      - 55679:55679 # zpages extension
+#      - 55679:55679 # zpages extension
     networks:
       - otel
 

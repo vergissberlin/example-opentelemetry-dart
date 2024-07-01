@@ -65,7 +65,7 @@ service:
       exporters: 
         - file
         - logging
-        - otlp
+        # - otlp
     logs:
       receivers: [otlp]
       processors: 
@@ -82,4 +82,4 @@ service:
       exporters: 
        - file
        - logging
-       - otlp
+       # - otlp

@@ -20,7 +20,4 @@ run:
 restart: down
 	make up
 
-alt:
-	cd opentelemetry && docker compose -f docker-compose.yml up -d --remove-orphans
-
 default: restart
