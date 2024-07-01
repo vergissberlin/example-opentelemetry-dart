@@ -2,29 +2,13 @@ services:
   collector:
     image: otel/opentelemetry-collector
     volumes:
-      - ./collector-edge/config/collector-edge-config.yaml:/etc/otelcol/config.yaml
+      - ./collector-edge/config/collector-edge-working.yaml:/etc/otelcol/config.yaml
       - ./collector-edge/logs/collector.json:/logs/collector.json
     ports:
-#      - 1888:1888 # pprof extension
-#      - 8888:8888 # Prometheus metrics exposed by the Collector
-#      - 8889:8889 # Prometheus exporter metrics
-#      - 13133:13133 # health_check extension
       - 4317:4317 # OTLP gRPC receiver
       - 4318:4318 # OTLP http receiver
-     # - 55679:55679 # zpages extension
     networks:
       - otel
-
-  #jaeger:
-  #  image: jaegertracing/all-in-one:latest
-  #  environment:
-  #    - COLLECTOR_OTLP_ENABLED=true
-  #  ports:
-  #    - 16686:16686
-  #    - 4317:4317
-  #    - 4318:4318
-  #  networks:
-  #    - otel
 
 networks:
   otel:
