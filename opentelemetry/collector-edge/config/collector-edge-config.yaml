@@ -4,15 +4,6 @@
 extensions:
 #   health_check:
 #   pprof:
-  file_storage:
-  file_storage/all_settings:
-    directory: /data/store/
-    timeout: 1s
-    compaction:
-      on_start: true
-      directory: /data/compress/
-      max_transaction_size: 65_536
-    #fsync: false
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Receivers
@@ -21,13 +12,13 @@ receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: localhost:4317
+        endpoint: 0.0.0.0:4317
       http:
-        endpoint: localhost:4318
+        endpoint: 0.0.0.0:4318
         cors:
           allowed_origins:
-            - "http://*"
-            - "https://*"
+            - "*"
+
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Processors
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -64,7 +55,6 @@ exporters:
 # Service
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 service:
-  extensions: [file_storage, file_storage/all_settings]
   pipelines:
     metrics:
       receivers: [otlp]
