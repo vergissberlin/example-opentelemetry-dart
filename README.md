@@ -24,11 +24,13 @@ Jaeger uses Elasticsearch.
 
 ## Features
 
-1. Offline capabilities to send traces to the OpenTelemetry Collector
-2. Collect metrics from the Flutter app
-3. Collect logs from the Flutter app
-4. Collect traces from the Flutter app
-5. Collect metrics with custom attributes from the Flutter app
+- [x] Collect metrics from the Flutter app
+- [x] Collect logs from the Flutter app
+- [ ] Collect traces from the Flutter app
+- [ ] Collect metrics with custom attributes from the Flutter app
+- [ ] Offline capabilities to send traces to the OpenTelemetry Collector
+
+![OTel Edge Cloud Flow](docs/OTel-Edge-and-Cloud.excalidraw.dark.png)
 
 ```mermaid
 flowchart TD

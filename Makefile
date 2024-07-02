@@ -20,4 +20,10 @@ run:
 restart: down
 	make up
 
+offline:
+	cd opentelemetry && docker compose -f compose.yml stop collector-cloud
+
+online:
+	cd opentelemetry && docker compose -f compose.yml start collector-cloud
+
 default: restart
