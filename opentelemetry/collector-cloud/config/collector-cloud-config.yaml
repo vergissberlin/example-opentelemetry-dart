@@ -51,7 +51,9 @@ service:
   pipelines:
     metrics:
       receivers: [otlp]
-      processors: [filter, batch]
+      processors: 
+        - filter
+        - batch
       exporters: 
         - file
         - otlp

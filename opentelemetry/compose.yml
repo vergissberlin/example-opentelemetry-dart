@@ -16,6 +16,8 @@ services:
       - otel
 
   collector-cloud:
+    depends_on:
+      - collector-edge
     image: otel/opentelemetry-collector
     command: ["--config", "/etc/otel/config.yaml"]
     volumes:
@@ -33,7 +35,7 @@ services:
     networks:
       - otel
 
-  jaeger:
+  jaeger:      
     image: jaegertracing/all-in-one
     environment:
       - COLLECTOR_OTLP_ENABLED=true

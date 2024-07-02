@@ -4,6 +4,16 @@
 extensions:
 #   health_check:
 #   pprof:
+    # fsync: false
+  file_storage:
+  file_storage/all_settings:
+    directory: /data/store/
+    timeout: 1s
+    compaction:
+      on_start: true
+      directory: /data/compress/
+      max_transaction_size: 65_536
+    # fsync: false
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Receivers
@@ -31,11 +41,17 @@ processors:
         metric_names:
           - queueSize
   memory_limiter:
-    # 75% of maximum memory up to 2G
-    limit_mib: 1536
-    # 25% of limit up to 2G
-    spike_limit_mib: 512
+    limit_mib: 1536      # 75% of maximum memory up to 2G
+    spike_limit_mib: 512 # 25% of limit up to 2G
     check_interval: 5s
+  queued_retry:
+    retry_on_failure:
+      enabled: true
+      initial_interval: 5s
+      max_interval: 30s
+      max_elapsed_time: 3600s
+    num_workers: 2
+    queue_size: 5000
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Exporters
@@ -55,6 +71,7 @@ exporters:
 # Service
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 service:
+  extensions: [file_storage, file_storage/all_settings]
   pipelines:
     metrics:
       receivers: [otlp]
@@ -65,7 +82,7 @@ service:
       exporters: 
         - file
         - logging
-        # - otlp
+        - otlp
     logs:
       receivers: [otlp]
       processors: 
@@ -74,11 +91,13 @@ service:
       exporters: 
         - file
         - logging
+        - otlp
     traces:
       receivers: [otlp]
       processors: 
         - memory_limiter
         - batch
+        - queued_retry
       exporters: 
        - file
        - logging
