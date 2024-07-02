@@ -11,7 +11,7 @@ This example shows how to use the OptenTelemetry with Dart and Flutter.
 - [Flutter Exampe App](https://flutter.dev/)
 - [Dart OpenTelemetry](https://pub.dev/packages/opentelemetry)
 
-It starts a simple Flutter app that sends traces to the OpenTelemetry 
+It starts a simple Flutter app that sends traces to the OpenTelemetry
 Collector, which then sends the traces to Jaeger. As a storage backend,
 Jaeger uses Elasticsearch.
 
@@ -48,11 +48,12 @@ flowchart TD
 
 ### Extension - File Storage
 
-[https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/storage/filestorage]
+- <https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/storage/filestorage>
+- <https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage/filestorage#section-readme>
 
 ### Exporter Helper
 
-[https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/exporterhelper]
+- <https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/exporterhelper>
 
 ```text
                                                               ┌─Consumer #1─┐
