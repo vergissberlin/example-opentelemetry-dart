@@ -5,7 +5,9 @@ receivers:
   otlp:
     protocols:
       grpc:
+        endpoint: 0.0.0.0:4217
       http:
+        endpoint: 0.0.0.0:4218
         cors:
           allowed_origins:
             - "*"
@@ -56,16 +58,16 @@ service:
         - batch
       exporters: 
         - file
-        - otlp
+#        - otlp
     logs:
       receivers: [otlp]
       processors: [batch]
       exporters: 
         - file
-        - otlp
+#        - otlp
     traces:
       receivers: [otlp]
       processors: [batch]
       exporters: 
         - file
-        - otlp
+#        - otlp

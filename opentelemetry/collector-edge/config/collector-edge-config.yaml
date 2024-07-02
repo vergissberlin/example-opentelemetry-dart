@@ -1,7 +1,7 @@
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Extensions
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-extensions:
+#extensions:
 #   health_check:
 #   pprof:
 #  file_storage/otc:
@@ -16,6 +16,13 @@ extensions:
 #      directory: /data/compress/
 #      max_transaction_size: 65_536
 #    # fsync: false
+extensions:
+  health_check:
+  pprof:
+    endpoint: 0.0.0.0:1777
+  zpages:
+    endpoint: 0.0.0.0:55679
+
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Receivers
@@ -60,7 +67,7 @@ processors:
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 exporters:
   otlp:
-    endpoint: collector-cloud:4317
+    endpoint: collector-cloud:4217
     tls:
       insecure: true
 #    sending_queue:
@@ -75,9 +82,12 @@ exporters:
 # Service
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 service:
-#  extensions: 
-#    - file_storage
-#    - file_storage/all_settings
+  extensions:
+    - health_check
+    - pprof
+    - zpages
+    # - file_storage
+    # - file_storage/all_settings
   pipelines:
     metrics:
       receivers: [otlp]
@@ -88,7 +98,6 @@ service:
       exporters: 
         - file
         - logging
-        - otlp
     logs:
       receivers: [otlp]
       processors: 
@@ -96,8 +105,6 @@ service:
         - batch
       exporters: 
         - file
-        - logging
-        - otlp
     traces:
       receivers: [otlp]
       processors: 
@@ -106,5 +113,4 @@ service:
 #        - queued_retry
       exporters: 
        - file
-       - logging
        - otlp
