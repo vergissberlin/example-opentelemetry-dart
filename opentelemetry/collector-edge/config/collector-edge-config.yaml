@@ -82,4 +82,4 @@ service:
       exporters: 
        - file
        - logging
-       # - otlp
+       - otlp

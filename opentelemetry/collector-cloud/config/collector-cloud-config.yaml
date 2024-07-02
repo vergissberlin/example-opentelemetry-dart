@@ -5,9 +5,7 @@ receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: localhost:4317
       http:
-        endpoint: localhost:4318
         cors:
           allowed_origins:
             - "*"
@@ -56,11 +54,13 @@ service:
       processors: [filter, batch]
       exporters: 
         - file
+        - otlp
     logs:
       receivers: [otlp]
       processors: [batch]
       exporters: 
         - file
+        - otlp
     traces:
       receivers: [otlp]
       processors: [batch]
