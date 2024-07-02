@@ -9,6 +9,9 @@ down:
 logs:
 	cd opentelemetry && docker compose -f compose.yml logs -f
 
+pull:
+	cd opentelemetry && docker compose -f compose.yml pull
+
 status:
 	cd opentelemetry && docker compose ps
 

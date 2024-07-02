@@ -2,18 +2,21 @@
 # Extensions
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 extensions:
+  file_storage/otc:
+    directory: /var/lib/storage/otc
+    timeout: 10s
 #   health_check:
 #   pprof:
     # fsync: false
-  file_storage:
-  file_storage/all_settings:
-    directory: /data/store/
-    timeout: 1s
-    compaction:
-      on_start: true
-      directory: /data/compress/
-      max_transaction_size: 65_536
-    # fsync: false
+  # file_storage:
+  # file_storage/all_settings:
+  #   directory: /data/store/
+  #   timeout: 1s
+  #   compaction:
+  #     on_start: true
+  #     directory: /data/compress/
+  #     max_transaction_size: 65_536
+  #   # fsync: false
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Receivers
@@ -44,14 +47,14 @@ processors:
     limit_mib: 1536      # 75% of maximum memory up to 2G
     spike_limit_mib: 512 # 25% of limit up to 2G
     check_interval: 5s
-  queued_retry:
-    retry_on_failure:
-      enabled: true
-      initial_interval: 5s
-      max_interval: 30s
-      max_elapsed_time: 3600s
-    num_workers: 2
-    queue_size: 5000
+#  queued_retry:
+#    retry_on_failure:
+#      enabled: true
+#      initial_interval: 5s
+#      max_interval: 30s
+#      max_elapsed_time: 3600s
+#    num_workers: 2
+#    queue_size: 5000
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # Exporters
@@ -61,6 +64,8 @@ exporters:
     endpoint: collector-cloud:4317
     tls:
       insecure: true
+    sending_queue:
+      storage: file_storage/otc
   logging:
   file:
     path: /logs/collector.json
@@ -71,7 +76,9 @@ exporters:
 # Service
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 service:
-  extensions: [file_storage, file_storage/all_settings]
+  extensions: 
+    - file_storage
+    - file_storage/all_settings
   pipelines:
     metrics:
       receivers: [otlp]
