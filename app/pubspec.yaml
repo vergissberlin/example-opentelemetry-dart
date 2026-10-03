@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^2.0.0
   opentelemetry: ^0.18.3
   http: ^1.1.2
 
